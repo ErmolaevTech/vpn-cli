@@ -22,6 +22,7 @@ async function run() {
       break;
     }
     case "disconnect":
+    case "disconn":
     case "off": {
       await commands.disconnect(vpnName);
       break;

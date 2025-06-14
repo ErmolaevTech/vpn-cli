@@ -47,3 +47,22 @@ vpn setDefault [name]
 
 vpn on # [name] vpn runs
 ```
+
+## Contribute
+First create an issue.
+
+Then install [node (>=20) and npm](https://nodejs.org/en), clone this repository. Run:
+``` bash
+npm i
+```
+Then run follow command:
+``` bash
+npm run build
+```
+Then run:
+``` bash
+npm link
+```
+Now the `vpn` command will proxy to the local build. After every change you need to run `npm run build`.
+
+Create a MR and send it

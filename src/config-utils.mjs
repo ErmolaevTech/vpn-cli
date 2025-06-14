@@ -10,6 +10,11 @@ export async function configAsJson() {
 
 export async function defaultVpnNameFromConfig() {
   const config = await configAsJson();
+
+  if (!config.defaultVpnName) {
+    throw new Error("Can not get vpn");
+  }
+
   return config.defaultVpnName;
 }
 

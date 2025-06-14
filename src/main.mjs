@@ -1,11 +1,14 @@
 #!/usr/bin/env zx
 import * as commands from "./commands/index.mjs";
 import { defaultVpnNameFromConfig } from "./config-utils.mjs";
+import { isNotEmpty } from "./utils.mjs";
 
 async function run() {
   const argv = minimist(process.argv.slice(2), {});
   const command = argv._[1];
-  const vpnName = argv._[2] ?? (await defaultVpnNameFromConfig());
+  const vpnName = isNotEmpty(argv._[2])
+    ? argv._[2]
+    : await defaultVpnNameFromConfig();
 
   switch (command) {
     case "connect":

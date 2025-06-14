@@ -1,7 +1,7 @@
 {
   "name": "vpn-cli",
   "version": "1.0.0",
-  "main": "./src/main.js",
+  "main": "./src/main.mjs",
   "bin": {
     "vpn": "./dist/main.js"
   },

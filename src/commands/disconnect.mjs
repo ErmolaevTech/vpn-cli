@@ -6,7 +6,8 @@ import { ensureConnectionStatus } from "../shared/connection-status.mjs";
 export async function disconnect(name) {
   const stop = startSpinner("");
   try {
-    debug("Try to vpn off");
+    debug("Attempt to disable vpn");
+
     await $`scutil --nc stop "${name}"`.quiet();
 
     const isDisconnectSuccessful = await ensureConnectionStatus(

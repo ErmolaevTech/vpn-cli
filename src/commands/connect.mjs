@@ -6,7 +6,8 @@ import { debug } from "../utils/index.mjs";
 export async function connect(vpnName) {
   const stop = startSpinner("");
   try {
-    debug("Try to vpn on");
+    debug("Attempt to enable vpn");
+
     await $`scutil --nc start "${vpnName}"`.quiet();
 
     const isConnectSuccessful = await ensureConnectionStatus(

@@ -26,7 +26,7 @@ function rowToVpnModel(row) {
     isActive,
     name,
     toString() {
-      return `${isActive ? "\u{1F7E2}" : "\u{1F534}"} ${name}`;
+      return `${this.isActive ? "\u{1F7E2}" : "\u{1F534}"} ${this.name}`;
     },
   };
 }

@@ -1,0 +1,24 @@
+{
+  "name": "vpn-cli",
+  "version": "1.0.0",
+  "main": "./src/main.js",
+  "bin": {
+    "vpn": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "esbuild ./src/main.mjs --bundle --packages=external --outdir=./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "zx": "^8.5.5"
+  },
+  "peerDependencies": {
+    "zx": "^8.5.5"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.5"
+  }
+}

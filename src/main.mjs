@@ -1,7 +1,10 @@
 #!/usr/bin/env zx
 import * as commands from "./commands/index.mjs";
-import { defaultVpnNameFromConfig } from "./config-utils.mjs";
-import { debugFlag, isNotEmpty } from "./utils/index.mjs";
+import {
+  debugFlag,
+  isNotEmpty,
+  defaultVpnNameFromConfig,
+} from "./utils/index.mjs";
 
 async function run() {
   const argv = minimist(process.argv.slice(2), {});

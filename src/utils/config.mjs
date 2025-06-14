@@ -1,4 +1,4 @@
-import { CONFIG_DIR, CONFIG_FILE_NAME } from "./constants.mjs";
+import { CONFIG_DIR, CONFIG_FILE_NAME } from "../constants.mjs";
 
 export function configFilePath() {
   return path.join(os.homedir(), CONFIG_DIR, CONFIG_FILE_NAME);

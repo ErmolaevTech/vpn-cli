@@ -1,12 +1,25 @@
-import { OFF_ICON, ERROR_ICON } from "../constants.mjs";
+import { OFF_ICON, ERROR_ICON, WARNING_ICON } from "../constants.mjs";
 import { startSpinner } from "../utils/spinner.mjs";
 import { debug } from "../utils/index.mjs";
 import { ensureConnectionStatus } from "../shared/connection-status.mjs";
+import { vpnModelList } from "./list.mjs";
 
-export async function disconnect(name) {
+export async function disconnect() {
   const stop = startSpinner("");
   try {
-    debug("Attempt to disable vpn");
+    debug("Try to find active vpn");
+
+    const activeVpn = (await vpnModelList()).find((vpn) => vpn.isActive);
+
+    if (!activeVpn) {
+      console.log(`${WARNING_ICON} You don't have a VPN enabled`);
+
+      return;
+    }
+
+    const name = activeVpn.name;
+
+    debug(`Found ${name}`);
 
     await $`scutil --nc stop "${name}"`.quiet();
 

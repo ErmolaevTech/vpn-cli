@@ -8,7 +8,8 @@
     "v": "./dist/main.js"
   },
   "scripts": {
-    "build": "esbuild ./src/main.mjs --bundle --minify --packages=external --outdir=./dist"
+    "build": "esbuild ./src/main.mjs --bundle --minify --packages=external --outdir=./dist",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "vpn",

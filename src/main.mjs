@@ -15,9 +15,6 @@ process.on("uncaughtException", function (err) {
 async function run() {
   const argv = minimist(process.argv.slice(2), {});
   const command = argv._[1];
-  const vpnName = isNotEmpty(argv._[2])
-    ? argv._[2]
-    : await defaultVpnNameFromConfig();
 
   if (argv.debug) {
     debugFlag.isOn = true;
@@ -27,6 +24,10 @@ async function run() {
     case "connect":
     case "conn":
     case "on": {
+      const vpnName = isNotEmpty(argv._[2])
+        ? argv._[2]
+        : await defaultVpnNameFromConfig();
+
       await commands.connect(vpnName);
       break;
     }
@@ -45,6 +46,10 @@ async function run() {
       break;
     }
     case "setDefault": {
+      const vpnName = isNotEmpty(argv._[2])
+        ? argv._[2]
+        : await defaultVpnNameFromConfig();
+
       await commands.setDefaultVpn(vpnName);
       break;
     }

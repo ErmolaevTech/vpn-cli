@@ -1,8 +1,7 @@
 import { OFF_ICON, ERROR_ICON, WARNING_ICON } from "../constants.mjs";
 import { startSpinner } from "../utils/spinner.mjs";
 import { debug } from "../utils/index.mjs";
-import { ensureConnectionStatus } from "../shared/connection-status.mjs";
-import { vpnModelList } from "./list.mjs";
+import { ensureConnectionStatus, vpnModelList } from "../shared/index.mjs";
 
 export async function disconnect() {
   const stop = startSpinner("");

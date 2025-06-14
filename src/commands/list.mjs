@@ -9,10 +9,7 @@ export async function vpnModelList() {
   // ignore first row
   const rows = processOutput.stdout.split("\n").slice(1);
 
-  const models = rows
-    .map(rowToVpnModel)
-    .filter(onlyWithName)
-    .sort((m) => m.isActive);
+  const models = rows.map(rowToVpnModel).filter(onlyWithName);
 
   return models;
 }

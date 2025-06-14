@@ -20,7 +20,7 @@ Install [node (>=20) and npm](https://nodejs.org/en)
 
 Then, install this package globally
 ``` bash
-npm i vpn-cli -g
+npm i @ermolaev/vpn-cli -g
 ```
 
 Now you can use it.

@@ -1,6 +1,7 @@
 {
   "name": "vpn-cli",
   "version": "1.0.0",
+  "description": "CLI for VPN control on macOS",
   "main": "./src/main.mjs",
   "bin": {
     "vpn": "./dist/main.js",
@@ -9,10 +10,13 @@
   "scripts": {
     "build": "esbuild ./src/main.mjs --bundle --packages=external --outdir=./dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "vpn",
+    "cli",
+    "macos"
+  ],
+  "author": "Ermolaev Ilya <Ermolaev.ID@yandex.ru>",
+  "license": "MIT",
   "dependencies": {
     "zx": "^8.5.5"
   },

@@ -5,24 +5,29 @@ export function configFilePath() {
 }
 
 export async function configAsJson() {
-  return fs.readJson(configFilePath());
+  try {
+    const json = await fs.readJson(configFilePath());
+    return json;
+  } catch (e) {
+    throw new Error(
+      `The configuration file is unavailable or contains invalid content.\n Please run ${chalk.blue("'vpn setDefault [name]'")} to create a valid config file`,
+      { cause: e },
+    );
+  }
 }
 
 export async function defaultVpnNameFromConfig() {
   const config = await configAsJson();
 
   if (!config.defaultVpnName) {
-    throw new Error("Can not get vpn");
+    throw new Error(
+      `The configuration file does not contain the ${chalk.blue("'defaultVpnName'")} field.\n Please run ${chalk.blue("'vpn setDefault [name]'")} to create a valid config file`,
+    );
   }
 
   return config.defaultVpnName;
 }
 
 export async function writeConfigFile(content) {
-  try {
-    await fs.outputFile(configFilePath(), content);
-  } catch (e) {
-    // TODO:
-    console.log(e);
-  }
+  await fs.outputFile(configFilePath(), content);
 }

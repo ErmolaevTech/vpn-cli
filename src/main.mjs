@@ -5,6 +5,12 @@ import {
   isNotEmpty,
   defaultVpnNameFromConfig,
 } from "./utils/index.mjs";
+import { ERROR_ICON } from "./constants.mjs";
+
+process.on("uncaughtException", function (err) {
+  console.error(`${ERROR_ICON} Something went wrong`);
+  console.error(err);
+});
 
 async function run() {
   const argv = minimist(process.argv.slice(2), {});

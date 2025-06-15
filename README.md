@@ -13,6 +13,7 @@ v setDefault vpnName2
 v on # Runs vpnName2
 
 v status # Connected to vpnName2
+v s # Connected to vpnName2
 ```
 
 ## Installation
@@ -38,10 +39,40 @@ vpn list
 ## Usage
 Available commands:
 - on [name?] - turn on vpn by name. The name is optional (see [Default VPN](#default-vpn))
+``` bash
+v on someName
+v on
+
+# Available aliases: connect, conn
+v connect
+v conn
+```
 - off - turn off the currently active vpn
+``` bash
+v off
+
+# Available aliases: disconnect, disconn
+v disconnect
+v disconn
+```
 - list - view available VPNs
+``` bash
+v list
+
+# Available aliases: l
+v l
+```
 - status - current vpn connection status
+``` bash
+v status
+
+# Available aliases: s
+v s
+```
 - setDefault [name] - see [Default VPN](#default-vpn) section
+``` bash
+v setDefault someName
+```
 
 You can use both `vpn` and just `v`
 

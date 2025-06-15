@@ -10,10 +10,7 @@ export async function configAsJson() {
     const json = await fs.readJson(configFilePath());
     return json;
   } catch (e) {
-    throw new Error(
-      `The configuration file is unavailable or contains invalid content.\n Please run ${chalk.blue("'vpn setDefault [name]'")} to create a valid config file`,
-      { cause: e },
-    );
+    return {};
   }
 }
 

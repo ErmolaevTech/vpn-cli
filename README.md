@@ -16,7 +16,14 @@ v status # Connected to vpnName2
 ```
 
 ## Installation
-Install [node (>=20) and npm](https://nodejs.org/en)
+Install [node (>=20), npm](https://nodejs.org/en) and [zx](https://google.github.io/zx/setup)
+
+The easiest way to install zx
+``` bash
+npm i zx -g
+# or
+brew install zx
+```
 
 Then, install this package globally
 ``` bash

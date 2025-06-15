@@ -26,5 +26,8 @@
   },
   "devDependencies": {
     "esbuild": "0.25.5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

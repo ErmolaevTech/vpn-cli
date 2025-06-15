@@ -20,7 +20,7 @@ export async function disconnect() {
 
     debug(`Found ${name}`);
 
-    await $`scutil --nc stop "${name}"`.quiet();
+    await $({ quiet: true })`scutil --nc stop ${name}`;
 
     const isDisconnectSuccessful = await ensureConnectionStatus(
       name,

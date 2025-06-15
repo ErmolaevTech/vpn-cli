@@ -7,7 +7,7 @@ import {
 export async function ensureConnectionStatus(vpnName, targetStatus) {
   async function ensure() {
     debug(`Check ${vpnName} status`);
-    const status = await $`scutil --nc status "${vpnName}"`.quiet();
+    const status = await $({ quiet: true })`scutil --nc status ${vpnName}`;
 
     const isConnected = isConnectedByStatusStdout(status.stdout);
 
@@ -24,7 +24,7 @@ export async function ensureConnectionStatus(vpnName, targetStatus) {
     return false;
   }
 
-  const { promise, resolve, reject } = Promise.withResolvers();
+  const { promise, resolve } = Promise.withResolvers();
 
   let timer = setTimeout(() => {
     debug(`Timeout for ${vpnName} checks`);

@@ -8,7 +8,7 @@ export async function connect(vpnName) {
   try {
     debug("Attempt to enable vpn");
 
-    await $`scutil --nc start "${vpnName}"`.quiet();
+    await $({ quiet: true })`scutil --nc start ${vpnName}`;
 
     const isConnectSuccessful = await ensureConnectionStatus(
       vpnName,

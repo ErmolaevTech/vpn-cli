@@ -37,10 +37,12 @@ async function run() {
       await commands.disconnect();
       break;
     }
+    case "l":
     case "list": {
       await commands.list();
       break;
     }
+    case "s":
     case "status": {
       await commands.status();
       break;

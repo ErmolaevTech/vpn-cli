@@ -6,6 +6,7 @@ import {
   defaultVpnNameFromConfig,
 } from "./utils/index.mjs";
 import { ERROR_ICON } from "./constants.mjs";
+import "./polyfills/index.mjs";
 
 process.on("uncaughtException", function (err) {
   console.error(`${ERROR_ICON} Something went wrong`);

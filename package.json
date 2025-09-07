@@ -1,6 +1,6 @@
 {
   "name": "@ermolaev/vpn-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI for VPN control on macOS",
   "main": "./src/main.mjs",
   "bin": {

@@ -10,9 +10,11 @@ export async function vpnModelList() {
 }
 
 function rowToVpnModel(row) {
-  const splitted = row.split(/\s+/);
-  const isActive = splitted[1] === "(Connected)";
-  const name = splitted[5]?.replaceAll('"', "")?.replaceAll("'", "");
+  const splitted = row.split(
+    /^\*\s+\(([^)]+)\)\s+([A-F0-9-]+)\s+VPN\s+\(([^)]+)\)\s+"([^"]+)"\s+\[VPN:([^\]]+)\]$/,
+  );
+  const isActive = splitted[1] === "Connected";
+  const name = splitted[4];
 
   return {
     isActive,
